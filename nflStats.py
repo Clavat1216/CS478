@@ -1,7 +1,7 @@
 import nflgame
 years = [2009, 2010, 2011, 2012, 2013, 2014]
 weeks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
-# teams = ['SD','KC','DEN','OAK','TEN','PIT','MIA','ATL','BAL','PHI','CAR','CIN','MIN','CLE','NYJ','HOU','JAC','IND','DET','NO','DAL','TB','SF','ARI','WAS','NYG','STL','SEA','CHI','GB','BUF','NE']
+teams = ['SD','KC','DEN','OAK','TEN','PIT','MIA','ATL','BAL','PHI','CAR','CIN','MIN','CLE','NYJ','HOU','JAC','IND','DET','NO','DAL','TB','SF','ARI','WAS','NYG','STL','SEA','CHI','GB','BUF','NE']
 arff = ['Year','Week',
 		'homeTotalYds','homePassYds','homeRushYds','homeFirstDowns','homeTurnovers','homePunts','homePosTime',
 		'awayTotalYds','awayPassYds','awayRushYds','awayFirstDowns','awayTurnovers','awayPunts','awayPosTime']
