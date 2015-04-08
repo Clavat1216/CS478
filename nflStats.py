@@ -11,13 +11,13 @@ f = open("test.txt", 'w')
 f.write("@RELATION nfl\n\n")
 for line in arff:
 	f.write("@ATTRIBUTE {} real\n".format(line))
-f.write("@ATTRIBUTE class {H,A}\n\n@Data\n")
+f.write("@ATTRIBUTE class {1,2}\n\n@Data\n")
 for year in years:
 	print "Year: ", year
 	for week in weeks:
 		games = nflgame.games(year, week, kind='REG')
 		for game in games:
-			winner = "H" if game.score_home > game.score_away else "A"
+			winner = "1" if game.score_home > game.score_away else "2"
 			f.write("{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n".format(
 																					year,
 																					week,
@@ -35,6 +35,24 @@ for year in years:
 																					game.stats_away.turnovers,
 																					game.stats_away.punt_cnt,
 																					game.stats_away.pos_time.total_seconds(),
+																					winner))
+			f.write("{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n".format(
+																					year,
+																					week,
+																					game.stats_away.total_yds, 
+																					game.stats_away.passing_yds,
+																					game.stats_away.rushing_yds, 
+																					game.stats_away.first_downs, 
+																					game.stats_away.turnovers, 
+																					game.stats_away.punt_cnt, 
+																					game.stats_away.pos_time.total_seconds(),
+																					game.stats_home.total_yds,
+																					game.stats_home.passing_yds, 
+																					game.stats_home.rushing_yds,
+																					game.stats_home.first_downs,
+																					game.stats_home.turnovers,
+																					game.stats_home.punt_cnt,
+																					game.stats_home.pos_time.total_seconds(),
 																					winner))
 f.close()
 
