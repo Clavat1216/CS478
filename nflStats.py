@@ -36,6 +36,8 @@ for year in years:
 																					game.stats_away.punt_cnt,
 																					game.stats_away.pos_time.total_seconds(),
 																					winner))
+
+			winner = "2" if game.score_home > game.score_away else "1"
 			f.write("{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n".format(
 																					year,
 																					week,
